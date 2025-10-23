@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMMIT=03c265b1adee71ac88f833e065f7bb956b60550a
+COMMIT=7d842fb85a0275a4a8e4d7e040d2625abbf7f084
 
 mkdir ~/.vscode-server
 cd ~/.vscode-server
