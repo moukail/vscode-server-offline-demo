@@ -6,7 +6,7 @@ code --version
 ### Download files
 
 ```bash
-COMMIT=03c265b1adee71ac88f833e065f7bb956b60550a
+COMMIT=7d842fb85a0275a4a8e4d7e040d2625abbf7f084
 wget https://update.code.visualstudio.com/commit:${COMMIT}/cli-alpine-x64/stable -O .vagrant/scripts/vscode-cli.tar.gz
 
 wget https://update.code.visualstudio.com/commit:${COMMIT}/server-linux-x64/stable -O .vagrant/scripts/vscode-server.tar.gz
@@ -37,6 +37,7 @@ gunzip redhat.vscode-yaml-1.19.1.vsix.gz
 ### verify it is a zip file
 file redhat.vscode-yaml-1.19.1.vsix
 unzip -t redhat.vscode-yaml-1.19.1.vsix
+
 ### install extention
 code --install-extension redhat.vscode-yaml-1.19.1.vsix --force
 
@@ -49,8 +50,6 @@ jq '."remote.SSH.useLocalServer" = true' ~/.config/Code/User/settings.json > tmp
 
 jq . ~/.config/Code/User/settings.json
 
-###
-.vscode-server/code-03c265b1adee71ac88f833e065f7bb956b60550a ext install --force redhat.vscode-yaml-1.19.1.vsix
 ```
 ### Review the installed extentions
 ```bash
