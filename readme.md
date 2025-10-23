@@ -40,14 +40,16 @@ unzip -t redhat.vscode-yaml-1.19.1.vsix
 ### install extention
 code --install-extension redhat.vscode-yaml-1.19.1.vsix --force
 
+### 
+# jq 'if has("remote.SSH.allowLocalServerDownload") then . else . + {"remote.SSH.allowLocalServerDownload": true} end' ~/.config/Code/User/settings.json > tmp.$$.json && mv tmp.$$.json ~/.config/Code/User/settings.json
 
-jq 'if has("remote.SSH.allowLocalServerDownload") then . else . + {"remote.SSH.allowLocalServerDownload": true} end' /home/imoukafih/.vscode/argv.json > tmp.$$.json && mv tmp.$$.json /home/imoukafih/.vscode/argv.json
+jq '."remote.SSH.allowLocalServerDownload" = true' ~/.config/Code/User/settings.json > tmp.$$.json && mv tmp.$$.json ~/.config/Code/User/settings.json
 
-jq '.remote.SSH.useLocalServer = true' . /home/imoukafih/.vscode/argv.json > tmp.$$.json && mv tmp.$$.json . /home/imoukafih/.vscode/argv.json
+jq '."remote.SSH.useLocalServer" = true' ~/.config/Code/User/settings.json > tmp.$$.json && mv tmp.$$.json ~/.config/Code/User/settings.json
 
-jq . /home/imoukafih/.vscode/argv.json
+jq . ~/.config/Code/User/settings.json
 
-
+###
 .vscode-server/code-03c265b1adee71ac88f833e065f7bb956b60550a ext install --force redhat.vscode-yaml-1.19.1.vsix
 ```
 ### Review the installed extentions
