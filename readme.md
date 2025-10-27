@@ -16,6 +16,8 @@ wget https://update.code.visualstudio.com/commit:${COMMIT}/server-linux-x64/stab
 ```bash
 vagrant up
 vagrant ssh machine1
+vagrant ssh machine1 -c ifconfig
+ssh vagrant@192.168.56.10
 ```
 
 ### Download VScode extentions
