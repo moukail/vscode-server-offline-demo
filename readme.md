@@ -1,10 +1,9 @@
-### Get VScode commit
+### Get VScode commit hash
 ```bash
 code --version
 ```
 
 ### Download files
-
 ```bash
 COMMIT=7d842fb85a0275a4a8e4d7e040d2625abbf7f084
 wget https://update.code.visualstudio.com/commit:${COMMIT}/cli-alpine-x64/stable -O .vagrant/scripts/vscode-cli.tar.gz
@@ -47,6 +46,9 @@ When connected to the remote machine
 Go to Manage > Extensions > More Action (...) > Install from VSIX... And select scripts/redhat.ansible-25.9.0.vsix and scripts/redhat.vscode-yaml-1.19.1.vsix
 
 ### Configure vscode 
+```bash
+dnf  install jq
+
 jq '."remote.SSH.allowLocalServerDownload" = true' ~/.config/Code/User/settings.json > tmp.$$.json && mv tmp.$$.json ~/.config/Code/User/settings.json
 
 jq '."remote.SSH.useLocalServer" = true' ~/.config/Code/User/settings.json > tmp.$$.json && mv tmp.$$.json ~/.config/Code/User/settings.json
@@ -57,8 +59,6 @@ jq . ~/.config/Code/User/settings.json
 ### Review the installed extentions
 ```bash
 code --list-extensions --show-versions
-
-dnf  install jq
 jq . .vscode-server/extensions/extensions.json | less
 ```
 
