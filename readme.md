@@ -6,7 +6,9 @@ code --version
 ### Download files
 ```bash
 COMMIT=7d842fb85a0275a4a8e4d7e040d2625abbf7f084
+
 wget https://update.code.visualstudio.com/commit:${COMMIT}/cli-alpine-x64/stable -O .vagrant/scripts/vscode-cli.tar.gz
+
 wget https://update.code.visualstudio.com/commit:${COMMIT}/server-linux-x64/stable -O .vagrant/scripts/vscode-server.tar.gz
 ```
 

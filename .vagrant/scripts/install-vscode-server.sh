@@ -3,7 +3,7 @@
 COMMIT=7d842fb85a0275a4a8e4d7e040d2625abbf7f084
 
 mkdir ~/.vscode-server
-cd ~/.vscode-server
+cd !$
 
 mv ../scripts/vscode-cli.tar.gz .
 mv ../scripts/vscode-server.tar.gz .

@@ -1,2 +1,3 @@
 .vagrant/machines
 .vagrant/rgloader
+.ansible/
